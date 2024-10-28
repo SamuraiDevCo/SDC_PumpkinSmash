@@ -280,7 +280,7 @@ AddEventHandler("SDPS:Client:TrySmashPumpkin", function(dat)
 
 	if allSLocs[theid] and not allSLocs[theid].CanSmash then
 		myjob = GetCurrentJob()
-		if myjob and not SDC.JobsThatCanResetPumpkinsSmashed[myjob] then
+		if myjob and SDC.JobsThatCanResetPumpkinsSmashed[myjob] then
 			TriggerEvent("SDPS:Client:Notification", SDC.Lang.CantSmashPumpkin2, "error")
 		else
 			TriggerServerEvent("SDPS:Server:SmashPumpkin", theid)
